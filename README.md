@@ -16,6 +16,7 @@ sam-sample
 │   └── users
 │       ├── index.ts
 │       └── users-module.ts
+```
 
 We have a 'src' directory at the root which will have all the functions in it. This allows us to have a single package.json for all the functions, making it easier to manage dependencies. 
 
