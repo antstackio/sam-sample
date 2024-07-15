@@ -5,7 +5,6 @@ stack_name = "design-principles"
 resolve_s3 = true
 s3_prefix = "design-principles"
 region = "us-east-2"
-profile = "960351580303_AdministratorAccess"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 parameter_overrides = "ExternalDependencies=\"mysql2 better-sqlite3 oracledb mysql tedious pg-query-stream sqlite3 pg\""
