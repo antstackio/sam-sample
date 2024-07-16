@@ -23,7 +23,7 @@ class Users extends PostgresDB {
       if(!userTable) {
         throw new Error("USER_TABLE environment variable is not set.");
       }
-      return await this.getItem(process.env.USER_TABLE!, id) as {id: number, username: string, email: string} | null;
+      return await this.getItem(userTable, id) as {id: number, username: string, email: string} | null;
     }
 
     // Add additional methods or override existing ones as needed
@@ -31,5 +31,9 @@ class Users extends PostgresDB {
 }
 
 // PSQL_CONNECTION_STRING environment variable contains the connection string for the PostgreSQL database
+const connectionString = process.env.PSQL_CONNECTION_STRING;
+if(!connectionString) {
+  throw new Error("PSQL_CONNECTION_STRING environment variable is not set.");
+}
 const users = new Users(process.env.PSQL_CONNECTION_STRING!);
 export default users;
