@@ -9,3 +9,4 @@ confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 parameter_overrides = "ExternalDependencies=\"mysql2 better-sqlite3 oracledb mysql tedious pg-query-stream sqlite3 pg\""
 image_repositories = []
+profile = "AntstackAccess"
