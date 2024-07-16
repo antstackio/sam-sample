@@ -6,6 +6,8 @@ class Users extends PostgresDB {
         super(connectionString);
     }
 
+    // USER_TABLE environment variable contains the name of the table meant for storing user information
+
     async addUser(username: string, email: string): Promise<void> {
       const id = randomUUID();
         await this.addItem(process.env.USER_TABLE as string, {id, username, email});
@@ -19,5 +21,6 @@ class Users extends PostgresDB {
 
 }
 
+// PSQL_CONNECTION_STRING environment variable contains the connection string for the PostgreSQL database
 const users = new Users(process.env.PSQL_CONNECTION_STRING as string);
 export default users;
