@@ -35,5 +35,5 @@ const connectionString = process.env.PSQL_CONNECTION_STRING;
 if(!connectionString) {
   throw new Error("PSQL_CONNECTION_STRING environment variable is not set.");
 }
-const users = new Users(process.env.PSQL_CONNECTION_STRING!);
+const users = new Users(connectionString);
 export default users;
