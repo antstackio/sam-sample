@@ -10,7 +10,11 @@ class Users extends PostgresDB {
     async addUser(username: string, email: string): Promise<void> {
       // USER_TABLE environment variable contains the name of the table meant for storing user information
       const id = randomUUID();
-        await this.addItem(process.env.USER_TABLE!, {id, username, email});
+      const userTable = process.env.USER_TABLE;
+      if (!userTable) {
+          throw new Error("USER_TABLE environment variable is not set.");
+      }
+      await this.addItem(userTable, {id, username, email});
     }
     
     async getUser(id: number): Promise<{id: number, username: string, email: string} | null> {
