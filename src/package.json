@@ -10,19 +10,23 @@
     "unit": "jest",
     "lint": "eslint '*.ts' --quiet --fix",
     "compile": "tsc",
-    "test": "npm run compile && npm run unit"
+    "test": "npm run compile && npm run unit",
+    "build": "sam build"
   },
   "dependencies": {
     "@middy/core": "^5.4.0",
     "@middy/http-header-normalizer": "^5.4.0",
     "@middy/http-router": "^5.4.0",
     "@middy/validator": "^5.4.0",
-    "esbuild": "^0.14.14"
+    "esbuild": "^0.23.0",
+    "knex": "^3.1.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.92",
     "@types/jest": "^29.2.0",
+    "@types/lodash": "^4.17.6",
     "@types/node": "^20.5.7",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "aws-sdk": "^2.1635.0",

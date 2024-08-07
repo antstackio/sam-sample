@@ -1,3 +1,5 @@
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+
 import notes from "./notes-module";
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
