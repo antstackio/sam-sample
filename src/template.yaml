@@ -13,16 +13,9 @@ Globals:
 Parameters:
   ExternalDependencies:
     Type: String
-    Default: "knex mysql2 better-sqlite3 oracledb mysql tedious pg-query-stream sqlite3 pg"
+    Default: "mysql2 better-sqlite3 oracledb mysql tedious sqlite3"
 
 Resources:
-  CommonDependencies:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      LayerName: common-dependencies
-      Description: Common dependencies for all functions
-      ContentUri: dependencies/common.zip
-      LicenseInfo: MIT
   NotesTable:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -65,8 +58,6 @@ Resources:
       CodeUri: users/
       Handler: index.handler
       Runtime: nodejs20.x
-      Layers:
-        - !Ref CommonDependencies
       Architectures:
         - x86_64
       Events:
